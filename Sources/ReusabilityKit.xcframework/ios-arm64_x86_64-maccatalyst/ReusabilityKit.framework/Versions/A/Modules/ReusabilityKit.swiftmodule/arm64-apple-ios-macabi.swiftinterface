@@ -1,0 +1,484 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-ios15.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ReusabilityKit
+import AudioToolbox
+import CoreLocation
+import Foundation
+import MapKit
+@_exported import ReusabilityKit
+import Swift
+import UIKit
+import _Concurrency
+extension Foundation.Data {
+  public var hexString: Swift.String {
+    get
+  }
+  public var stringValue: Swift.String {
+    get
+  }
+  public var dictValue: [Swift.String : Any]? {
+    get
+  }
+  public var prettyPrintedJSONString: Foundation.NSString? {
+    get
+  }
+}
+extension UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) public func scrollToView(view: UIKit.UIView, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func scrollToTop(animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func scrollToBottom()
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class RoundedImage : UIKit.UIImageView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var borderColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var borderWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var cornerRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, macCatalyst 13.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension MapKit.MKMapItem {
+  convenience public init(coordinate: CoreLocation.CLLocationCoordinate2D, name: Swift.String)
+}
+@objc public protocol FloatRatingViewDelegate {
+  @objc func floatRatingView(_ ratingView: ReusabilityKit.FloatRatingView, didUpdate rating: Swift.Float)
+  @objc optional func floatRatingView(_ ratingView: ReusabilityKit.FloatRatingView, isUpdating rating: Swift.Float)
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class FloatRatingView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) weak open var delegate: ReusabilityKit.FloatRatingViewDelegate?
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var emptyImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var fullImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var minRating: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var maxRating: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var minImageSize: CoreGraphics.CGSize
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var rating: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var editable: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var halfRatings: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var floatRatings: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc required override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat = 1.0)
+  convenience public init(hex6: Swift.UInt32, alpha: CoreGraphics.CGFloat = 1)
+  convenience public init(hex8: Swift.UInt32)
+  convenience public init(hexString: Swift.String, alpha: CoreGraphics.CGFloat = 1.0)
+  public class func colorWithHexCode(_ hexValue: Swift.UInt) -> UIKit.UIColor
+  public static func colorHash(name: Swift.String?) -> UIKit.UIColor
+  public func toHexString() -> Swift.String
+  public static var random: UIKit.UIColor {
+    get
+  }
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func hideKeyboardWhenTappedAround()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func dismissKeyboard()
+  @_Concurrency.MainActor(unsafe) public var isModelPresent: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func hidenAllSubViews(isHiddenAllSubViews: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func presentOnRoot(with viewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) public func setBackButton(backButtonImg: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func hideNavigationBar(animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func showNavigationBar(animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func addChildViewController(_ child: UIKit.UIViewController, frame: CoreGraphics.CGRect? = nil)
+  @_Concurrency.MainActor(unsafe) public func removeAllChildViewController()
+  @_Concurrency.MainActor(unsafe) public func removeTopChildViewController()
+}
+extension UIKit.UIViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+}
+extension UIKit.UINavigationItem {
+  @_Concurrency.MainActor(unsafe) public func setTitle(_ title: Swift.String, subtitle: Swift.String)
+}
+extension Swift.Bool {
+  public mutating func toggle() -> Swift.Bool
+}
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func resetScrollPositionToTop()
+  @_Concurrency.MainActor(unsafe) public func setEmptyMessage(_ message: Swift.String, textColor: UIKit.UIColor = UIColor.black, messageFont: UIKit.UIFont = UIFont.systemFont(ofSize: 20))
+  @_Concurrency.MainActor(unsafe) public func restore(with separatorStyle: UIKit.UITableViewCell.SeparatorStyle = .none)
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public var documentsDirectoryURL: Foundation.URL {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var documentsPathString: Swift.String? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var cachesDirectoryURL: Foundation.URL {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var downloadsDirectoryURL: Foundation.URL {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var libraryDirectoryURL: Foundation.URL {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var applicationSupportDirectoryURL: Foundation.URL {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func clearLaunchScreenCache()
+}
+extension Foundation.Bundle {
+  public var displayName: Swift.String? {
+    get
+  }
+  public var appName: Swift.String? {
+    get
+  }
+  public var versionNumber: Swift.String {
+    get
+  }
+  public var buildNumber: Swift.String {
+    get
+  }
+  public var packageVersion: Swift.String {
+    get
+  }
+  public var bundleId: Swift.String {
+    get
+  }
+}
+extension Foundation.Bundle {
+  public func decode<T>(_ type: T.Type, from file: Swift.String, dateDecodingStrategy: Foundation.JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: Foundation.JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T where T : Swift.Decodable
+}
+extension Dispatch.DispatchQueue {
+  public static func background(_ task: @escaping () -> Swift.Void)
+  public static func main(_ task: @escaping () -> Swift.Void)
+}
+extension UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) public func addDoneButton(barStyle: UIKit.UIBarStyle = .default, title: Swift.String? = nil)
+}
+extension UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) public func setLineSpacing(lineSpacing: CoreGraphics.CGFloat = 0.0, lineHeightMultiple: CoreGraphics.CGFloat = 0.0)
+  @_Concurrency.MainActor(unsafe) public var numberOfVisibleLines: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class CardView : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var masksToBounds: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var shadowOffset: CoreGraphics.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var shadowRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var shadowOpacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) public var previousViewController: UIKit.UIViewController? {
+    get
+  }
+}
+extension Swift.Array {
+  public func random() -> Element?
+}
+extension Swift.Array where Element == [Swift.String] {
+  public var csv: Swift.String {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.Equatable {
+  public mutating func removeObject(object: Element)
+}
+extension Swift.Array where Element == Swift.Int {
+  public var mean: Swift.Double {
+    get
+  }
+  public var median: Swift.Double {
+    get
+  }
+}
+extension Swift.Int {
+  public var isPerfectSquare: Swift.Bool {
+    get
+  }
+  public var minutesToHoursMinutes: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Utilities {
+  public class func showAlertWithMessage(_ message: Swift.String, inViewController view: UIKit.UIViewController)
+  public class func invokeMethod(_ method: @escaping (() -> Swift.Void), withDelay seconds: Swift.Int)
+  public class func getJSONDataFromBundleFile(_ fileName: Swift.String) -> Swift.Dictionary<Swift.String, Swift.AnyObject>
+  public class func getDummyReponseJSONFromBundleFile(_ fileName: Swift.String) -> Swift.Dictionary<Swift.String, Swift.AnyObject>
+  public class func getJSONDictionary(PlistFile fileName: Swift.String) -> [Swift.String : Any]?
+  public class func getArray(PlistFile fileName: Swift.String) -> [Any]?
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func rounded(radius: CoreGraphics.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func removeAllSubView()
+  @_Concurrency.MainActor(unsafe) public func applyShadow(color: UIKit.UIColor = .black, opacity: Swift.Float = 0.5, x: CoreGraphics.CGFloat = 0, y: CoreGraphics.CGFloat = 2, blur: CoreGraphics.CGFloat = 4, cornerRadius: CoreGraphics.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) public func removeShadow()
+  @_Concurrency.MainActor(unsafe) public var parentViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func addTapGesture(tapCount: Swift.Int = 1, target: Any, action: ObjectiveC.Selector)
+  @_Concurrency.MainActor(unsafe) public func applyGradient(colors: [UIKit.UIColor], locations: [Foundation.NSNumber]?)
+  @_Concurrency.MainActor(unsafe) public func shake()
+  @_Concurrency.MainActor(unsafe) public func addBlurView()
+}
+extension Swift.String {
+  public func capitalizingFirstLetter() -> Swift.String
+  public mutating func capitalizeFirstLetter()
+  public var trimmed: Swift.String {
+    get
+  }
+  public mutating func trim()
+  public func split(separator: Swift.String) -> [Swift.String]
+  public func split(characters: Foundation.CharacterSet) -> [Swift.String]
+  public func replace(target: Swift.String, with newString: Swift.String) -> Swift.String
+  public var numberOfWords: Swift.Int {
+    get
+  }
+  public var isEmail: Swift.Bool {
+    get
+  }
+  public var isEmailValid: Swift.Bool {
+    get
+  }
+  public var isPasswordValid: Swift.Bool {
+    get
+  }
+  public var containsOnlyDigits: Swift.Bool {
+    get
+  }
+  public var isAlphanumeric: Swift.Bool {
+    get
+  }
+  public func grouping(every groupSize: Swift.String.IndexDistance, with separator: Swift.Character) -> Swift.String
+  public subscript(range: Swift.CountableRange<Swift.Int>) -> Swift.String {
+    get
+  }
+  public func isContainNumber() -> Swift.Bool
+  public func isContainLowercaseCharacter() -> Swift.Bool
+  public func isContainUppercaseCharacter() -> Swift.Bool
+  public func toDate(withFormat format: Swift.String = "yyyy-MM-dd HH:mm:ss", timeZone: Foundation.TimeZone = .current) -> Foundation.Date?
+  public func toBool() -> Swift.Bool?
+  public func isNumber() -> Swift.Bool
+  public func reverseString() -> Swift.String
+  public func randomString(length: Swift.Int = 20) -> Swift.String
+  public var asDict: [Swift.String : Any]? {
+    get
+  }
+  public var asArray: [Any]? {
+    get
+  }
+  public func vowelConsonantCount() -> (vowels: Swift.Int, consonants: Swift.Int)
+  public var numberOfVowels: Swift.Int {
+    get
+  }
+  public var asCoordinates: CoreLocation.CLLocationCoordinate2D? {
+    get
+  }
+  public func truncate(to length: Swift.Int, addEllipsis: Swift.Bool = false) -> Swift.String
+}
+extension Swift.String {
+  public func height(withConstrainedWidth width: CoreGraphics.CGFloat, font: UIKit.UIFont) -> CoreGraphics.CGFloat
+  public func width(withConstrainedHeight height: CoreGraphics.CGFloat, font: UIKit.UIFont) -> CoreGraphics.CGFloat
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static func vibrate()
+  @_Concurrency.MainActor(unsafe) public var vendorID: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var deviceType: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var modelName: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var screenSize: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var screenResolution: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var screenSizeDiagonally: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func ipAddress() -> Swift.String?
+}
+extension UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) public static var key: UIKit.UIWindow? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var visibleViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static func getVisibleViewControllerFrom(vc: UIKit.UIViewController?) -> UIKit.UIViewController?
+}
+extension Foundation.Date {
+  public init?(fromString string: Swift.String, format: Swift.String)
+  public func timeAgoSinceDate() -> Swift.String
+  public func toString(withFormat format: Swift.String = "MMM dd, yyyy", timeZone: Foundation.TimeZone = .current) -> Swift.String
+  public func toString(dateStyle: Foundation.DateFormatter.Style = .medium, timeStyle: Foundation.DateFormatter.Style = .medium) -> Swift.String
+  public func secondsInBetweenDate(date: Foundation.Date) -> Swift.Double
+  public static var currentTimeStamp: Swift.Int64 {
+    get
+  }
+  public static func randomDate(range: Swift.Int) -> Foundation.Date
+  public func startOfMonth() -> Foundation.Date
+  public func endOfMonth() -> Foundation.Date
+  public func nextDate() -> Foundation.Date
+  public func previousDate() -> Foundation.Date
+  public func addMonths(numberOfMonths: Swift.Int) -> Foundation.Date
+  public func removeMonths(numberOfMonths: Swift.Int) -> Foundation.Date
+  public func removeYears(numberOfYears: Swift.Int) -> Foundation.Date
+}
+public func == (lhs: Foundation.Date, rhs: Foundation.Date) -> Swift.Bool
+public func < (lhs: Foundation.Date, rhs: Foundation.Date) -> Swift.Bool
+public func > (lhs: Foundation.Date, rhs: Foundation.Date) -> Swift.Bool
+extension UIKit.UIAlertController {
+  @_Concurrency.MainActor(unsafe) public class func showAlert(title: Swift.String?, message: Swift.String?, viewController: UIKit.UIViewController? = nil)
+  @_Concurrency.MainActor(unsafe) public class func showError(errorMessage: Swift.String = "Oops! Something went wrong, please try again later")
+  @_Concurrency.MainActor(unsafe) public class func showSettingsAlert(title: Swift.String, message: Swift.String, viewController: UIKit.UIViewController? = nil)
+}
+extension UIKit.UIAlertController {
+  @_Concurrency.MainActor(unsafe) public class func presentAlert(title: Swift.String, message: Swift.String, options: Swift.String..., completion: @escaping (Swift.Int) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public class func topMostViewController() -> UIKit.UIViewController
+}
+@_hasMissingDesignatedInitializers public class SystemInfoAPI {
+  public static let shared: ReusabilityKit.SystemInfoAPI
+  final public let deviceModel: Swift.String
+  final public let deviceOSName: Swift.String
+  final public let deviceOSVersion: Swift.String
+  final public let localizedModel: Swift.String
+  public var deviceName: Swift.String? {
+    get
+  }
+  public var appVersion: Swift.String {
+    get
+  }
+  public var appName: Swift.String {
+    get
+  }
+  public var bundleIdentifier: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension UIKit.UIImage {
+  public var convertToBase64: Swift.String? {
+    get
+  }
+  public func compressImage(rate: CoreGraphics.CGFloat) -> Foundation.Data?
+  public func getSizeAsBytes() -> Swift.Int
+  public func getSizeAsKilobytes() -> Swift.Int
+  public func aspectHeightForWidth(width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+  public func aspectWidthForHeight(height: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+  public class func blankImage() -> UIKit.UIImage?
+  public func alpha(_ value: CoreGraphics.CGFloat) -> UIKit.UIImage?
+}
+extension UIKit.UIImage {
+  public enum JPEGQuality : CoreGraphics.CGFloat {
+    case lowest
+    case low
+    case medium
+    case high
+    case highest
+    public init?(rawValue: CoreGraphics.CGFloat)
+    public typealias RawValue = CoreGraphics.CGFloat
+    public var rawValue: CoreGraphics.CGFloat {
+      get
+    }
+  }
+  public func jpeg(_ jpegQuality: UIKit.UIImage.JPEGQuality) -> Foundation.Data?
+}
+extension UIKit.UISwitch {
+  @_Concurrency.MainActor(unsafe) public func set(width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func toggle()
+}
+extension Swift.Collection {
+  public var isNotEmpty: Swift.Bool {
+    get
+  }
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func roundImage()
+  @_Concurrency.MainActor(unsafe) public func downloadedFrom(url: Foundation.URL, contentMode mode: UIKit.UIView.ContentMode = .scaleAspectFit)
+  @_Concurrency.MainActor(unsafe) public func downloadedFrom(link: Swift.String, contentMode mode: UIKit.UIView.ContentMode = .scaleAspectFit)
+}
+extension Foundation.UserDefaults {
+  public subscript<T>(key: Swift.String) -> T? {
+    get
+    set
+  }
+  public subscript<T>(key: Swift.String) -> T? where T : Swift.RawRepresentable {
+    get
+    set
+  }
+}
+extension Foundation.UserDefaults {
+  public var lastLoginEmail: Swift.String? {
+    get
+    set
+  }
+}
+extension Swift.Dictionary where Key : Swift.Comparable, Value : Swift.Equatable {
+  public func difference(WithDictionary dictionary: [Key : Value]) -> [Key : Value]
+}
+extension Foundation.Date {
+  public func convertTo(DateFormat toFormat: Swift.String) -> Swift.String
+  public var startOfWeek: Foundation.Date? {
+    get
+  }
+  public var endOfWeek: Foundation.Date? {
+    get
+  }
+}
+extension UIKit.UITextField {
+  @_Concurrency.MainActor(unsafe) public func underlined()
+  @_Concurrency.MainActor(unsafe) public func setLeftView(img: UIKit.UIImage, width: CoreGraphics.CGFloat = 50, tintColor: UIKit.UIColor = .black)
+  @_Concurrency.MainActor(unsafe) public func setRightView(img: UIKit.UIImage, width: CoreGraphics.CGFloat = 50)
+  @_Concurrency.MainActor(unsafe) public func setLeftPadding(paddingValue: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setRightPadding(paddingValue: CoreGraphics.CGFloat)
+}
+extension UIKit.UIImage.JPEGQuality : Swift.Equatable {}
+extension UIKit.UIImage.JPEGQuality : Swift.Hashable {}
+extension UIKit.UIImage.JPEGQuality : Swift.RawRepresentable {}

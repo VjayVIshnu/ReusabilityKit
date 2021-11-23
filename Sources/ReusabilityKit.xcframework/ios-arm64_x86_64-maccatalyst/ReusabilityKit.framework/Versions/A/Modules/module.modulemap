@@ -1,0 +1,11 @@
+framework module ReusabilityKit {
+  umbrella header "ReusabilityKit.h"
+
+  export *
+  module * { export * }
+}
+
+module ReusabilityKit.Swift {
+    header "ReusabilityKit-Swift.h"
+    requires objc
+}
